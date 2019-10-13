@@ -1,0 +1,666 @@
+/*===================================================
+Name: Pawiwahan Template HTML Responsive
+Version: 1.0.0
+Author dekdekstudio
+===================================================*/
+
+/*===================================================
++ TABLE OF CONTENT
+===================================================*/
+/*--------------------------------------------------
+0.1 fonts
+0.2 Reset Style
+1.0 Preloader
+2.0 Global Element
+3.0 Navbar
+4.0 Home
+5.0 Couple
+6.0 Countdown
+7.0 Event
+8.0 Story
+9.0 People
+10.0 Gallery
+11.0 rsvp
+12.0 Footer
+
+/*--------------------------------------------------
+0.1 Fonts
+--------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,700');
+@import url('https://fonts.googleapis.com/css?family=Allura');
+/*--------------------------------------------------
+0.2 Reset Style
+--------------------------------------------------*/
+body {
+    position: relative;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    color: #181818;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #141413;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+/*--------------------------------------------------
+1.0 Preloader
+--------------------------------------------------*/
+.preloader-wrapper {
+    background:#FFF;
+    height: 100%;
+    left: 0;
+    overflow: visible;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999999;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.preloader-block {
+    position: relative;
+    height: 60px;
+    width: 60px;
+    border: 4px solid rgb(255, 181, 181);
+    margin: auto;
+    border-radius: 50%;
+}
+
+.preloader-block:before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: -8px;
+    height: calc(100% + 16px);
+    width: calc(100% + 16px);
+    border: 10px solid transparent;
+    border-radius: 50%;
+    z-index: 99999999;
+    border-left-color: #e97987;
+    -webkit-animation: spinner 1s linear 0s infinite;
+    animation: spinner 1s linear 0s infinite;
+}
+
+@-webkit-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+/*--------------------------------------------------
+2.0 Global Element
+--------------------------------------------------*/
+.main-wrapper {
+    background-color: #FFF;
+    min-height: 100%;
+}
+
+.offset {
+    padding-top: 4rem;
+}
+
+.title-section {
+    margin-bottom: 2rem;
+}
+
+.title-section h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgb(255, 148, 148);
+}
+/*--------------------------------------------------
+3.0 Navbar
+--------------------------------------------------*/
+.navbar-custom {
+    background-color: rgb(255, 255, 255);
+    padding-top: 0;
+    padding-bottom: 0;
+    position: relative;
+    z-index: 999;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-custom {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}
+
+.navbar-custom .nav-link {
+    color: #181818;
+    font-size: 1.1rem;
+    border-bottom: 0.1rem solid transparent;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .active {
+    color: rgb(255, 148, 148);
+    border-bottom: 0.1rem solid rgb(255, 148, 148);
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+
+.navbar-custom .nav-item {
+    padding: .3rem .3rem;
+}
+
+
+.navbar-custom .navbar-toggler {
+    border-color: rgb(255, 148, 148);
+}
+
+.navbar-custom .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 148, 148)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-custom .navbar-brand {
+    color: rgb(255, 148, 148);
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 0;
+}
+
+.navbar-custom .nav-featured {
+    background-color: rgb(255, 181, 181);
+    border: 0.2rem solid rgb(255, 181, 181);
+}
+
+.navbar-custom li.nav-featured a.active {
+    color: #FFF;
+    border-bottom: 0.1rem solid transparent;
+}
+
+.navbar-custom .nav-featured .nav-link:hover {
+    border-bottom: 0.1rem solid transparent;
+    color: #FFF;
+}
+
+.navbar-custom .dropdown-menu {
+    border-radius: 0;
+    padding: 0;
+}
+
+.navbar-custom .dropdown-menu .dropdown-item {
+    color: #181818;
+}
+
+.navbar-custom .dropdown-menu .dropdown-item:hover {
+    color: rgb(255, 148, 148);
+    background-color: rgb(248, 248, 248);
+}
+
+.navbar-custom .dropdown-menu .dropdown-item:focus {
+    background-color: rgb(248, 248, 248);
+}
+/*--------------------------------------------------
+4.0 Home
+--------------------------------------------------*/
+.home-inner {
+    background-image: url('../image/home-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.home-content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.home-content .title-bride {
+    color: #FFF;
+    font-family: 'Allura', cursive;
+    font-size: 5rem;
+}
+
+@media (max-width: 991.98px) {
+    .home-content .title-bride {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .home-content .title-bride {
+        font-size: 8vh;
+    }
+}
+
+.home-content .title-wedding-date,
+.home-content .title-home-description {
+    color: #FFF;
+}
+/*--------------------------------------------------
+5.0 Couple
+--------------------------------------------------*/
+.couple-content {
+    border: 0.1rem solid rgb(255, 148, 148);
+    height: 20rem;
+    overflow: hidden;
+    border-radius: 3rem;
+}
+
+.couple-content .couple-photo {
+    width: 100%;
+    transition: transform 0.5s ease;
+    -webkit-transition: transform 0.5s ease;
+    -o-transition: transform 0.5s ease;
+    -ms-transition: transform 0.5s ease;
+    -moz-transition: transform 0.5s ease;
+}
+
+.couple-content:hover .couple-photo {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+}
+
+.couple-description {
+    margin-top: 1.5rem;
+}
+
+.couple-description .couple-name {
+    color: #363636;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.couple-description .couple-text {
+    color: #a7a6a6;
+}
+
+.couple-social-media .social-icon {
+    border: 0.1rem solid rgb(255, 148, 148);
+    height: 3rem;
+    width: 3rem;
+    display: block;
+    position: relative;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.couple-social-media .social-icon .icon-position {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: rgb(255, 148, 148);
+    font-size: 1.2rem;
+}
+
+.couple-social-media .social-inline {
+    display: inline-block;
+    padding: 0 0.2rem;
+}
+/*--------------------------------------------------
+6.0 Countdown
+--------------------------------------------------*/
+.countdown-inner {
+    padding: 4rem 0;
+    background-image: url('../image/countdown-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.countdown-content {
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.countdown-content .countdown-box {
+    background-color: rgba(255, 148, 148,0.5);
+    display: block;
+    width: 100%;
+    height: 10rem;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 3rem;
+}
+
+.countdown-box .countdown-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 3rem;
+}
+
+.countdown-number .countdown-time {
+    color: #FFF;
+    font-family: 'Dancing Script', cursive;
+    display: block;
+}
+
+.countdown-number .countdown-display {
+    color: #FFF;
+    font-size: 0.8rem;
+    display: block;
+}
+/*--------------------------------------------------
+7.0 Event
+--------------------------------------------------*/
+.event-content {
+    background-color: rgba(255, 204, 204, 0.363);
+}
+
+.event-content .event-img {
+    width: 100% !important;
+}
+
+.event-content .event-description {
+    padding: 2rem;
+    display: block;
+}
+
+.event-content .event-description h3 {
+    color: #363636;
+    font-size: 1.4rem;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.event-date, .event-location {
+    font-weight: lighter;
+    display: block;
+}
+
+.event-date i,
+.event-location i {
+    color: rgb(204, 121, 121);
+}
+
+.btn-event-rsvp {
+    background-color: transparent;
+    border: 0.1rem solid rgb(255, 148, 148);
+    border-radius: 1rem;
+    padding: 0.5rem 0;
+    color: rgb(255, 148, 148);
+}
+
+.btn-event-rsvp:hover {
+    color: rgb(204, 121, 121);
+}
+/*--------------------------------------------------
+8.0 Story
+--------------------------------------------------*/
+.story-timeline:after {
+    content: "";
+    position: absolute;
+    z-index: 9;
+    width: 2px;
+    height: 100%;
+    background-color: rgba(255, 160, 160, 0.233);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
+
+.story-content {
+    padding: 0 2rem; 
+    position: relative;
+    width: 100%;
+}
+
+.story-content .love-mark-right {
+    position: absolute;
+    right: -1rem;
+    z-index: 9999;
+}
+
+.story-content .love-mark-left {
+    position: absolute;
+    left: -1rem;
+    z-index: 9999;
+}
+
+.love-mark-right .love-icon,
+.love-mark-left .love-icon {
+    position: relative;
+    background-color: rgb(255, 148, 148);
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+.love-mark-right .love-icon i,
+.love-mark-left .love-icon i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #FFF;
+    z-index: 9999;
+}
+
+.story-content .story-date {
+    color: #363636;
+    display: block;
+}
+
+.story-content .story-text {
+    padding-top: 1rem;
+    color: rgb(158, 158, 158);
+}
+
+@media (max-width: 767.98px) {
+    .story-content {
+        padding: 1.5rem 0;
+        border-top: 0.1rem solid rgba(255, 160, 160, 0.233);
+    }
+
+    .story-timeline:after {
+        background-color: transparent;
+    }
+
+    .story-content .love-mark-right {
+        top: -1rem;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .story-content .love-mark-left {
+        top: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+/*--------------------------------------------------
+9.0 People
+--------------------------------------------------*/
+.people-wrapper {
+    margin-top: 4rem;
+    background-color: rgb(247, 245, 245);
+}
+
+.people-content {
+    position: relative;
+    background-color: #FFF;
+}
+
+.people-description {
+    padding: 1rem;
+}
+
+.people-description .people-name {
+    color: #363636;
+    font-size: 1.2rem;
+}
+
+.people-description .people-position {
+    color: rgb(158, 158, 158);
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.people-photo {
+    position: relative;
+    overflow: hidden;
+}
+
+.people-photo img {
+    transition: transform 0.5s ease;
+}
+
+.people-photo:hover img {
+    transform: scale(1.3);
+}
+
+.people-social-media .social-icon {
+    border: 0.1rem solid rgb(255, 148, 148);
+    height: 2rem;
+    width: 2rem;
+    display: block;
+    position: relative;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.people-social-media .social-icon .icon-position {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: rgb(255, 148, 148);
+    font-size: 1.2rem;
+}
+
+.people-social-media .social-inline {
+    display: inline-block;
+    padding: 0 0.2rem;
+}
+/*--------------------------------------------------
+10.0 Gallery
+--------------------------------------------------*/
+.gallery-filter-menu {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.gallery-filter-menu li {
+    display: inline-block;
+    font-size: 1.3rem;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+}
+
+.gallery-filter-menu li:last-child {
+    padding-right: 0;
+}
+
+.gallery-filter-menu li.filtr-active {
+    border-bottom: 0.1rem solid rgb(255, 148, 148);
+    color: rgb(255, 148, 148);
+}
+/*--------------------------------------------------
+11.0 rsvp
+--------------------------------------------------*/
+.form-rsvp {
+    border-radius: 0.2rem;
+    border: 0.1rem solid rgb(255, 148, 148);
+    color: rgb(204, 121, 121);
+}
+.form-rsvp:focus {
+    color: rgb(204, 121, 121);
+    box-shadow: none;
+    border: 0.1rem solid rgb(184, 113, 113);
+}
+
+.form-rsvp::placeholder {
+    color: rgb(204, 121, 121)
+}
+
+.btn-rsvp {
+    border: 0.1rem solid rgb(255, 148, 148);
+    border-radius: 1.5rem;
+    background-color: rgb(255, 148, 148);
+    padding: 0.5rem 1rem;
+    color: #FFF; 
+}
+
+.btn-rsvp:hover {
+    border: 0.1rem solid rgb(255, 148, 148);
+    border-radius: 1.5rem;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    color: rgb(255, 148, 148);
+}
+
+.map-location iframe {
+    border: none;
+    width: 100%;
+    height: 15.5rem;
+}
+/*--------------------------------------------------
+12.0 footer
+--------------------------------------------------*/
+.footer-inner {
+    background-image: url('../image/thanks-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.footer-inner .footer-text {
+    color: rgb(214, 214, 214);
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media (max-width: 575.98px) {
+    .footer-inner .footer-text {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .footer-inner .footer-text {
+        width: 70%;
+    }
+}
